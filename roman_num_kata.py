@@ -2,12 +2,12 @@
 
 numerals = {'I': 1, 'IV': 4, 'V': 5, 'IX': 9, 'X': 10, 'XL': 40, 'L':50, 'XC': 90, 'C': 100, 'CD': 400, 'D':500, 'CM': 900, 'M':1000}
 
-
 # Test to print out the dictionary
 # for k,v in numerals.items():
 #     print(k,v)
 #     print()
 
+input_number = int(input("Write a number to convert to roman numeral: "))
 
 def convert_to_roman(input_number):
     range_flag = None
@@ -21,23 +21,20 @@ def convert_to_roman(input_number):
     remaining = input_number - numerals[range_flag]
     return range_flag + convert_to_roman(remaining)
 
-# Test out different numbers in the parentheses
-print(convert_to_roman(4))
 
+answer1 = convert_to_roman(input_number)
+print(f'The converted roman numeral is: {answer1}')
 
 # Part 2
 
-symbol_number = input("Write a roman numer to convert to a digit: ")
-x = input()
+symbol_number = input("Write a roman numeral to convert to a number: ")
 
-digits = {'I': 1, 'IV': 4, 'V': 5, 'IX': 9, 'X': 10, 'XL': 40, 'L':50, 'XC': 90, 'C': 100, 'CD': 400, 'D':500, 'CM': 900, 'M':1000}
 answer = 0
-
 for i in range(len(symbol_number)):
-    if i+1 != len(symbol_number) and digits[symbol_number[i]] < digits[symbol_number[i+1]]:
-        answer = answer - digits[symbol_number[i]]
+    if i+1 != len(symbol_number) and numerals[symbol_number[i]] < numerals[symbol_number[i+1]]:
+        answer = answer - numerals[symbol_number[i]]
     else:
-        answer = answer + digits[symbol_number[i]]
+        answer = answer + numerals[symbol_number[i]]
 
-print(x)
-print(f'This is: {answer}')
+
+print(f'The converted roman numeral is: {answer}')
