@@ -23,7 +23,7 @@ def convert_to_roman(input_number):
 
 
 answer1 = convert_to_roman(input_number)
-print(f'The converted roman numeral is: {answer1}')
+print(f'The converted number is: {answer1}')
 
 # Part 2
 
