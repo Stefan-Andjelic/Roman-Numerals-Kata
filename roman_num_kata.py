@@ -29,12 +29,15 @@ print(f'The converted number is: {answer1}')
 
 symbol_number = input("Write a roman numeral to convert to a number: ")
 
-answer = 0
-for i in range(len(symbol_number)):
-    if i+1 != len(symbol_number) and numerals[symbol_number[i]] < numerals[symbol_number[i+1]]:
-        answer = answer - numerals[symbol_number[i]]
-    else:
-        answer = answer + numerals[symbol_number[i]]
+def convert_to_digits(symbol_number):
+    answer = 0
+    for i in range(len(symbol_number)):
+        if i+1 != len(symbol_number) and numerals[symbol_number[i]] < numerals[symbol_number[i+1]]:
+            answer = answer - numerals[symbol_number[i]]
+        else:
+            answer = answer + numerals[symbol_number[i]]
+
+    return answer
 
 
-print(f'The converted roman numeral is: {answer}')
+print("The converted roman numeral is: ", convert_to_digits(symbol_number))
